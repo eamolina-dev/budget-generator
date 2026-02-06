@@ -1,3 +1,6 @@
+import { ButtonLink } from "./ButtonLink";
+import { ImageSection } from "./ImageSection";
+
 type Props = {
   src: string;
   title: string;
@@ -7,16 +10,9 @@ type Props = {
 
 export const Hero = ({ src, title, subtitle, btnText }: Props) => {
   return (
-    <section className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen overflow-hidden my-1">
-      {/* Imagen de fondo */}
-      <img
-        src={src}
-        alt="Fotografía artística"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-
-      {/* Overlay oscuro */}
-      <div className="absolute inset-0 bg-black/50"></div>
+    <ImageSection src={src}>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Contenido */}
       <div className="relative z-10 flex items-center justify-center h-full text-white text-center px-6">
@@ -29,16 +25,9 @@ export const Hero = ({ src, title, subtitle, btnText }: Props) => {
             {subtitle}
           </p>
 
-          <br />
-
-          <a
-            href="#servicios"
-            className="mt-8 inline-block border border-white px-8 py-3 text-lg tracking-widest hover:bg-white hover:text-black transition"
-          >
-            {btnText}
-          </a>
+          <ButtonLink href="#servicios">{btnText}</ButtonLink>
         </div>
       </div>
-    </section>
+    </ImageSection>
   );
 };

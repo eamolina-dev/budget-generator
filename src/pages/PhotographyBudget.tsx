@@ -1,7 +1,7 @@
 import { DynamicImageSection } from "../components/DynamicImage";
 import { FullImageSection } from "../components/FullImageSection";
 import { Hero } from "../components/HeroImage";
-import { SplitSection } from "../components/SplitSection";
+import { InfoSection } from "../components/InfoSection";
 import { SectionTitle } from "../components/SectionTitle";
 import { PricingSection } from "../components/PricingSection";
 import { FaqSection } from "../components/FaqSection";
@@ -16,7 +16,7 @@ export const PhotographyBudget = () => {
         subtitle="Fotografía documental de bodas"
         btnText="VER SERVICIOS"
       />
-      <SplitSection
+      <InfoSection
         image="https://images.unsplash.com/photo-1522673607200-164d1b6ce486"
         title="El Servicio"
         description={
@@ -29,6 +29,7 @@ export const PhotographyBudget = () => {
             pasan desapercibidos, pero que hacen que el día sea inolvidable.
           </>
         }
+        ctaText="RESERVAR FECHA"
       />
       <DynamicImageSection image="/couple-8176869_1280.jpg" />
       <FullImageSection src="/woman-4081760_1280.jpg" />
@@ -53,6 +54,8 @@ export const PhotographyBudget = () => {
             privada
           </>
         }
+        priceLabel="Desde"
+        ctaText="RESERVAR FECHA"
       />
 
       <PricingSection
@@ -75,6 +78,8 @@ export const PhotographyBudget = () => {
             - Galería online privada <br />- Adelanto de fotos a las 48 hs
           </>
         }
+        priceLabel="Desde"
+        ctaText="RESERVAR FECHA"
       />
 
       <FaqSection

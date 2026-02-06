@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { ImageSection } from "./ImageSection";
 
 type Props = {
   image: string;
@@ -10,7 +11,6 @@ export const DynamicImageSection = ({ image }: Props) => {
   useEffect(() => {
     const handleScroll = () => {
       if (!imgRef.current) return;
-
       const section = imgRef.current.closest("section");
       if (!section) return;
 
@@ -26,18 +26,17 @@ export const DynamicImageSection = ({ image }: Props) => {
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <section className="relative w-full h-[60vh] md:h-[75vh] lg:h-screen overflow-hidden my-1">
+    <ImageSection src={image}>
       <img
         ref={imgRef}
         src={image}
-        alt="Fotografía artística"
+        alt=""
         className="absolute inset-0 w-full h-full object-cover"
       />
-    </section>
+    </ImageSection>
   );
 };

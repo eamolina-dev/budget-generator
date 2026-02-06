@@ -1,11 +1,8 @@
-type FaqItem = {
-  question: string;
-  answer: string;
-};
+import { FaqItem, type FaqItemType } from "./FaqItem";
 
 type Props = {
   title?: string;
-  items: FaqItem[];
+  items: FaqItemType[];
 };
 
 export const FaqSection = ({
@@ -13,7 +10,7 @@ export const FaqSection = ({
   items,
 }: Props) => {
   return (
-    <section className="w-full py-24 px-6 bg-neutral-100 my-1">
+    <section className="w-full py-24 px-6 my-1">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-light text-center mb-16">
           {title}
@@ -21,10 +18,7 @@ export const FaqSection = ({
 
         <div className="space-y-10">
           {items.map((item, i) => (
-            <div key={i}>
-              <h3 className="text-lg font-medium mb-2">{item.question}</h3>
-              <p className="text-gray-600 leading-relaxed">{item.answer}</p>
-            </div>
+            <FaqItem key={i} {...item} />
           ))}
         </div>
       </div>
